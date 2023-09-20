@@ -3,13 +3,13 @@ import { MapContainer, TileLayer,Marker,Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
 import "leaflet-defaulticon-compatibility";
-
+import { getLoc } from './helpers/helpers.js';
 
 
 
 const Map = ({lat,long,loc,h,userIp}) => {
   // npm i leaflet leaflet-defaulticon-compatibility leaflet-geosearch react-leaflet
-
+  getLoc(userIp);
   return (
     <MapContainer center={[lat,long]} zoom={16} scrollWheelZoom={false} style={{height: h, width: "100%"}} >
       <Marker 
